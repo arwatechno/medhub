@@ -1,93 +1,56 @@
-/*side nav*/
+
 const sidebarLinks = [
-    { text: "The Development and Rollout of COVID-19 Vaccines", href: "#section1" },
-    { text: "The Long-Term Effects of COVID-19 on Patient Health", href: "#section2" },
-    { text: "The Impact of the Pandemic on the Healthcare System and Medical Professionals", href: "#section3" }
-  ];
-    
-  //to create and append sidebar links
-  function createSidebarLinks() {
-    const sidenavElement = document.getElementById("mySidenav");
-  
-    sidebarLinks.forEach((link, index) => {
-    // link element
+  { text: "The Development and Rollout of COVID-19 Vaccines", href: "#section1" },
+  { text: "The Long-Term Effects of COVID-19 on Patient Health", href: "#section2" },
+  { text: "The Impact of the Pandemic on the Healthcare System and Medical Professionals", href: "#section3" }
+];
+
+// Function to create and append navbar links
+function createNavbarLinks() {
+  const navbarElement = document.getElementById("navbar");
+
+  sidebarLinks.forEach((link) => {
     const linkElement = document.createElement("a");
-    linkElement.id = 'thenav';
     linkElement.href = link.href;
     linkElement.textContent = link.text;
-      
-    //styles to the link element
-    linkElement.style.position = "fixed"; 
-    linkElement.style.left = "-600px";
-    linkElement.style.transition = "0.3s";
-    linkElement.style.padding = "15px";
-    linkElement.style.width = "600px";
-    linkElement.style.textDecoration = "none";
-    linkElement.style.fontSize = "20px";
-    linkElement.style.color = "#190019";
-    linkElement.style.backgroundColor = "#FED7A5"; 
-    linkElement.style.borderRadius = "0 5px 5px 0";
-    linkElement.style.backgroundColor = link.backgroundColor;
-    linkElement.style.top = `${200 + (index * 60)}px`;
-          
-      
-    // Hover 
-    linkElement.addEventListener("mouseenter", () => {
-      linkElement.style.left = "0";
-    });
-      
-    linkElement.addEventListener("mouseleave", () => {
-      linkElement.style.left = "-600px";
-    });
-      
-    // when clicked 
     linkElement.addEventListener("click", (event) => {
       event.preventDefault();
       const targetId = event.target.getAttribute("href");
       smoothScroll(targetId, 1000); // Scroll duration of 1 second
-      closeNav();
-      });
-        
-      // Append the link to the sidenav
-      sidenavElement.appendChild(linkElement);
     });
-  }
-    
-  /*smooth scrolling*/
+    navbarElement.appendChild(linkElement);
+  });
+}
+
+    // Smooth scroll function
     function smoothScroll(target, duration) {
-    const targetElement = document.querySelector(target);
-    if (targetElement) {
-    const targetPosition = targetElement.getBoundingClientRect().top;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-      
-    function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) {
-    requestAnimationFrame(animation);
-    } else {
-    targetElement.scrollIntoView({ behavior: 'auto' });
+      var targetElement = document.querySelector(target);
+      var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      var startPosition = window.pageYOffset;
+      var distance = targetPosition - startPosition;
+      var startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
     }
-    }
-      
-    function easeInOutQuad(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-      
-    requestAnimationFrame(animation);
-    }
-  }
-    
-  // Create the sidebar links
-  createSidebarLinks();
-    
+
+    // Create the navbar links
+    createNavbarLinks();
+
   /* active state */
   window.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('.section');
