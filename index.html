@@ -1,0 +1,92 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MedicalHub</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&amp;display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="page__header">
+            <!--please give me bonus bec. I made this logo by myself -->
+            <img id="logo" src="https://scontent.fcai22-4.fna.fbcdn.net/v/t39.30808-6/452023697_374690388976559_8948394905257284192_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH6HYJktT8JAxI8Js0PtsvzkY7YGtjPXmSRjtga2M9eZOHNxyGSGsuTnRoH2q7-zi1DL_9hfIsyhmp8C9m-wqGr&_nc_ohc=4gjAz3NrEvQQ7kNvgFuYtII&_nc_ht=scontent.fcai22-4.fna&oh=00_AYBrH_xrtWyAGz7hCYWEIzDqwiVwEuJCBjT3AoXWqLR-2g&oe=669F5708">   
+    </header>
+    <main>        
+      <header class="main__hero">
+        <h1>COVID-19 Pandemic</h1>
+      </header>
+<!--side nav to  navigate in same page-->
+      <div id="mySidenav" class="sidenav"></div>
+<!-- section1  -->
+      <div class="section">
+      <section id="section1" data-nav="Section 1"  >
+        <div class="landing__container">
+          <h2>The Development and Rollout of COVID-19 Vaccines</h2>
+          <p>The race to develop effective COVID-19 vaccines was an unprecedented global effort, with pharmaceutical companies and research institutions collaborating at an unprecedented pace. The rapid development and authorization of multiple vaccine candidates, such as Pfizer-BioNTech, Moderna, and AstraZeneca, was a remarkable achievement, made possible by advancements in vaccine technology, streamlined clinical trials, and international cooperation.  </p>
+          <p>The rollout of these vaccines has been a massive logistical challenge, requiring governments, healthcare systems, and distribution networks to work in tandem to ensure equitable access and administration across the world.</p>
+        </div>
+      </section>
+      <div id="img1" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5tmKLOFBvXoWuJlr7o7lKPIpmlrl-nSRP4EdBW1gAqudKt5XtpndWloj28Z2dsPWlW5o&usqp=CAU"></div>
+      </div>
+<!-- section2  -->
+      <div class="section">
+        <section id="section2" data-nav="Section 2">
+        <div class="landing__container">
+          <h2>The Long-Term Effects of COVID-19 on Patient Health</h2>
+          <p>While the short-term effects of COVID-19 infection have been well-documented, the long-term consequences are still emerging. A significant number of recovered patients, commonly referred to as "long-haulers," continue to experience persistent symptoms, such as fatigue, brain fog, and cardiovascular complications. These long-term effects have been observed across all age groups, including previously healthy individuals.</p>
+          <p> Understanding the mechanisms behind long COVID and developing tailored treatments are critical areas of research, as the medical community works to support the recovery and well-being of those affected.</p>
+        </div>
+      </section>
+      <div id="img2" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLGbsAPTGpxiAZv9aA5rnHC3OpQhaiuQ_CCQ&s"></div>
+      </div>
+<!-- section3  -->
+      <div class="section">
+        <section id="section3" data-nav="Section 3">
+        <div class="landing__container">
+          <h2>The Impact of the Pandemic on the Healthcare System and Medical Professionals</h2>
+          <p>The COVID-19 pandemic has placed an unprecedented strain on healthcare systems worldwide, testing their resilience and adaptability. Healthcare workers have been on the frontlines, facing overwhelming patient volumes, personal protective equipment shortages, and the emotional toll of caring for critically ill individuals. The pandemic has also led to the postponement of non-essential medical procedures, exacerbating backlogs and impacting the overall delivery of healthcare services. </p>  
+          <p>As the medical community navigates these challenges, the lessons learned will inform infrastructure improvements, workforce support, and emergency preparedness strategies to strengthen the resilience of healthcare systems for future public health crises.</p>
+        </div>
+      </section>
+      <div  ><img id="img3" src="https://content.gallup.com/origin/gallupinc/GallupSpaces/Production/Cms/POLL/g6ysfd18ykizsro714q9dw.jpg"></div>
+      </div>
+<!-- comments  -->
+      <div class="container">
+        <h3>Comments</h3>
+        <form id="comment" class="cm">
+            <input class="form-input" 
+            type="text"
+                placeholder="Enter Your Username"
+                id="name" 
+                name="name"
+                placeholder = "name"> 
+            <input class="form-input"
+                type="email"
+                placeholder="Enter Your Email"
+                id="email"
+                name="email"
+                placeholder = "email"> 
+            <input type="text" id="cmnt-input" class="form-input" placeholder="comment here...">
+            <!-- a button to publish comment  -->
+            <button id= "sub1" type="submit">publish</button>
+        </form>
+        <ul id="comments" class="cm">
+            <!-- comments will be dynamically added here -->
+        </ul>
+        <p id="placeholder-text">Share Your Thoughts</p>
+    </div> 
+<!---->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img id="totop" src="https://cdn1.iconfinder.com/data/icons/hands-pt-1/100/013_-_hand_arrow-512.png"></button>
+
+    </main>
+    <footer class="page__footer">
+      <p>Medical Hub # ArwaTechno © Udacity</p>
+    </footer>
+  
+  
+    <script src="js/thejs.js"></script>
+
+  </body>
+  
+   </html>
